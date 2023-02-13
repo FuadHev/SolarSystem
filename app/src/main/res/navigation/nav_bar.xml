@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bar"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.info.solarsystem.ui.fragment.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/splash_to_planet"
+            app:destination="@id/planetsFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/planetsFragment"
+        android:name="com.info.solarsystem.ui.fragment.PlanetsFragment"
+        android:label="fragment_planets"
+        tools:layout="@layout/fragment_planets" >
+        <action
+            android:id="@+id/planets_to_infoPlanet"
+            app:destination="@id/infoPlanetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoPlanetFragment"
+        android:name="com.info.solarsystem.ui.fragment.InfoPlanetFragment"
+        android:label="fragment_info_planet"
+        tools:layout="@layout/fragment_info_planet" >
+        <argument
+            android:name="planetsItem"
+            app:argType="com.info.solarsystem.data.entity.PlanetsItem" />
+    </fragment>
+</navigation>
