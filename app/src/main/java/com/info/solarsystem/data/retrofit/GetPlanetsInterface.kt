@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 
 interface GetPlanetsInterface {
-    @Headers("X-RapidAPI-Key:86347cf50amshad9291561d5023bp154c19jsn872ca464bf8c",
+    @Headers("X-RapidAPI-Key:Your api key",
              "X-RapidAPI-Host:planets-info-by-newbapi.p.rapidapi.com")
     @GET("planet/list")
     fun getPlanets(): Call<Planets>
